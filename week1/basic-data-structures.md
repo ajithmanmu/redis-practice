@@ -1,13 +1,16 @@
 ### Week 1 - Basic Redis Data Structures
 
 Logical databases provide separation of key names. i.e same key name can appear in multiple logical databases. Redis do not. 
+
 It avoids the complexity of namespace management.
+
 A logical database is identified by a zero-based index. The default is database 0.
+
 Redis uses database 0. 
 Redis keys are case sensitive. This is because key name is a binary sequence.
 
-DEL - removes memory associated
-UNLINK  - removes memory as an async process. Hence it is unblocking.
+`DEL` - removes memory associated
+`UNLINK`  - removes memory as an async process. Hence it is unblocking.
 NX parameter in SET is used to check for existence of key in Redis.
 
 Lists are stored in memory as below:
