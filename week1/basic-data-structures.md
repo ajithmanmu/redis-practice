@@ -21,6 +21,7 @@ Keys and Scan difference:
 <Image>
 
 #### Commands used
+
 ```
 SET customer:1000 jeff
 SET customer:1001 dana
