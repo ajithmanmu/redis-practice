@@ -15,10 +15,12 @@ Redis keys are case sensitive. This is because key name is a binary sequence.
 `NX` parameter in SET is used to check for existence of key in Redis.
 
 Lists are stored in memory as below:
-<Image>
+
+![Lists](./lists.png?raw=true "Lists")
 
 Keys and Scan difference: 
-<Image>
+
+![Keys vs Scan](./scanvskeys.png?raw=true "Keys vs Scan")
 
 #### Commands used
 
@@ -67,7 +69,7 @@ By default Redis will always create a field and a key if either do not exist.
 
 Allows duplicate. Redis implements lists as a doubly linked lists. See diagram. Use cases - Activity stream
 Used to implement Stacks and Queues. Can do insert/delete at left or right of a list.
-Queue implementaion - Use RPUSH and LPOP
+Queue implementaion - Use `RPUSH` and `LPOP`
 ```
 LPUSH, RPUSH // insert list element
 LPOP, RPOP //delete list element
@@ -85,7 +87,7 @@ lindex list-two 1 // returns "c"
 ```
 
 ####  Sets are unordered collection of unique strings. 
-Use case - Tag Cloud, Tracking Unique visitors (Using SADD, SCAN, EXPIRE)
+Use case - Tag Cloud, Tracking Unique visitors (Using `SADD`, `SCAN`, `EXPIRE`)
 ```
 SADD, SMEMBERS, SSCAN, SPOP
 SADD venues "Tokyo Stadium" "Atlanta Stadium" "California"
@@ -107,5 +109,4 @@ ZRANGE student_rankings 0 -1 WITHSCORES
 The rank is the absolute position of the element within the Sorted Set. Its a zero based integer index.
 ZINTERSTORE, ZUNIONSTORE - Sorted sets provide the ability to perform an intersection and union but not a difference.
 Use cases: Leaderboard, Priorith Queue
-
 ```
