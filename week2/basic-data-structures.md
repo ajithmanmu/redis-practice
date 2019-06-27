@@ -11,7 +11,7 @@ lrange list-1 0 -1
 ltrim list-1 1 -1
 ```
 
-####Sorted Sets
+#### Sorted Sets
 Use case: LeaderBoard (ZADD + ZREMRANGEBYRANK)
 
 `ZREMRANGEBYRANK` key start stop // Specify Elements are being removed
