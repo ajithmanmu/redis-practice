@@ -32,7 +32,7 @@ Hashes and Sets can be used together for storing relational schemas.
 Example:
 Hash - hash_master_table
 Hash - hash_child_table
-SET hash_master_table(KEY) hash_child_table(VALUE)
+SADD hash_master_table(KEY) hash_child_table(VALUE) 
 ```
 
 
