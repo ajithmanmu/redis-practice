@@ -1,5 +1,7 @@
 ### BitFields
 
+Redis uses the String data type to store BITFIELDS.
+
 ```
 bitfield bf1 set u8 0 20
 bitfield bf1 get u8 0
@@ -25,4 +27,35 @@ bitop or ba3 ba1 ba2 // Perfoming an OR operation on 2 bit arrays. The BITOP com
 bitcount ba3 // equal to 2
 ```
 ![Lists](./bitfield_3.png?raw=true "Lists")
+
+### Notes on Seat Reservation example (Python implementation)
+
+For creating 10 seats, we follow the below logic:
+
+```
+10 Seats 
+    --> (2 to power of 10) - 1 is 
+        --> 1023
+            --> This is stored in a bitfield with value 1023. However the bit represenation of this value would look like below:
+                --> 1111111111 (i.e 10 1's are stored in this field which represents 10 available seats)
+                    --> bitcount for this variable would return 10
+To find 6 seats:
+        --> (2 to power of 6) - 1 is  
+            --> 63
+                ---> The bit representation is - 111111 
+The code does a bitwise & operation to see if 6 seats are available in 10. i.e 6 consecutive 1's - 111111 are available in 1111111111 (in a row)                
+If not perform a binary left shift on 1111111111  and search again.
+```
+
+#### Publish and Unpublish channels
+PUBLISH, SUBSCRIBE,UNPUBLISH
+
+Messages will only be received to the clients that are currently subscribed.
+A client can subscribe to one or more channels in a single or multiple SUBSCRIBE commands.
+
+![Lists](./channel_1.png?raw=true "Lists")
+
+PUBSUB, PSUBSCRIBE // Pattern subscriptions
+
+
 
