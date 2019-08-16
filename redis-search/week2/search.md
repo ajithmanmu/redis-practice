@@ -19,3 +19,10 @@ For fuzzy matching use `%<query>%`
 
 `ft.search permits "\"carport\"" limit 0 0` // For exact matching use "". Escape the double quotes also.
 `ft.explaincli permits "\"green house\""`
+
+Paren usage - `ft.explaincli permits "(underground parkade) | (parking lot)"` // Means (underground AND parkade) OR (parking AND lot)
+`ft.explaincli permits "((underground parkade) | (parking lot) demolish)"`
+Using NOT - `ft.explaincli permits "((underground parkade) | (parking lot) -demolish)"`
+`ft.explaincli permits "((underground parkade) | (parking lot) -(demolish|remove))"`
+
+RediSearch is based on set theory. 
