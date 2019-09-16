@@ -2,6 +2,17 @@
 
 Redis uses the String data type to store BITFIELDS.
 
+Bit Data
+    - Bit fields and Bit arrays - provide dense amount of data in a single key
+    - Compact , optimized structure
+        - Use cases: File permissions, histogram of counters
+    - No explicity bit data type, operates on strings    
+Bit Field 
+    - consists of a number of adjacent computer memory locations which have been allocated to hold a sequence of bits, stored so that any single bit or group of bits within the set can be addressed.A bit field is most commonly used to represent integral types of known, fixed bit-width.
+    - Index by Offset and Index by Position (# - multiply by position * bitfield size to get the bitfield offset)
+Bit Arrays
+    - 
+
 ```
 bitfield bf1 set u8 0 20
 bitfield bf1 get u8 0

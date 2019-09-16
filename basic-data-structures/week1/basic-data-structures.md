@@ -53,7 +53,7 @@ GET inventory:4x100-womens-final // Returns "999" //However the decremented valu
 object encoding inventory:4x100-womens-final // "int" // object command to get the encoding of the value stored
 ```
 
-Redis supports polymorphism. i.e same key can have values with different datatypes
+Redis supports polymorphism. i.e same key can have values with different datatypes.
 
 #### Hashes 
 A mini key value store within a Redis Key. Only single level is supported. So no nested fields. Use case - Rate limiting and session stores.
